@@ -1,0 +1,10 @@
+name: Test ARC Runner
+on: workflow_dispatch   # manually trigger करने के लिए
+
+jobs:
+  explore:
+    runs-on: arc-runner-set   # exact release name match करो
+    steps:
+      - run: echo "🎉 Runner working on Kubernetes!"
+      - run: hostname
+      - run: kubectl get nodes   # optional, cluster info देखने के लिए (if permissions allow)
